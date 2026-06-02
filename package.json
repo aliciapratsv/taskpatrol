@@ -1,0 +1,13 @@
+{
+  "name": "asana-bot-monitor",
+  "version": "1.0.0",
+  "description": "Bot que monitorea Asana y alerta por menciones sin respuesta y tareas vencidas",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "nodemailer": "^6.9.13"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}
