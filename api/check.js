@@ -151,8 +151,9 @@ export default async function handler(req, res) {
     const now = new Date();
 
     const teamMembers = await getTeamGids();
-    const projects = await asanaGet(`/projects?workspace=${WORKSPACE_GID}&archived=false&opt_fields=gid,name`);
-
+    console.log('[Debug] Team members encontrados:', teamMembers.length, teamMembers.map(m => m.email).join(', '));
+const projects = await asanaGet(`/projects?workspace=${WORKSPACE_GID}&archived=false&opt_fields=gid,name`);
+console.log('[Debug] Proyectos encontrados:', projects.length, projects.map(p => p.name).join(', '));
     const allAlerts = [];
     for (const member of teamMembers) {
       const teamInfo = TEAM.find(t => t.email === member.email);
